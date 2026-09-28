@@ -1,7 +1,7 @@
 ---
 title: News
 date: 2026-09-28
-_build:
+build:
   render: never
   list: never
 ---

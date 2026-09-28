@@ -2,5 +2,8 @@
   "scripts": {
     "dev": "hugo server --buildDrafts --buildFuture",
     "build": "hugo --gc --minify"
+  },
+  "dependencies": {
+    "vis-network": "^9.1.13"
   }
 }

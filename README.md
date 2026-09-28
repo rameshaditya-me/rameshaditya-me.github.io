@@ -6,15 +6,17 @@ Live at [rameshaditya-me.github.io](https://rameshaditya-me.github.io/).
 
 ## Local development
 
-**Prerequisites:** [Hugo Extended](https://gohugo.io/installation/) and [Go](https://go.dev/dl/) (for Hugo modules). [Node.js](https://nodejs.org/) is optional if you prefer `npm run` scripts.
+**Prerequisites:** [Hugo Extended](https://gohugo.io/installation/), [Go](https://go.dev/dl/) (for Hugo modules), and [Node.js](https://nodejs.org/) (theme JS build dependency).
 
 ```bash
+# Install JS dependencies (required by the theme build)
+npm install
+
 # Download theme module
 hugo mod get
 
 # Start dev server
-hugo server --buildDrafts --buildFuture
-# or: npm run dev
+npm run dev
 ```
 
 Open [http://localhost:1313](http://localhost:1313).
