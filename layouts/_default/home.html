@@ -5,9 +5,73 @@
         <h1 class="!mb-1">{{ . }}</h1>
       </header>
     {{ end -}}
-    {{- with .Content }}
-      {{ . }}
-    {{ end -}}
+    <style>
+      .author-intro {
+        display: flow-root;
+      }
+      .author-intro > p:first-of-type {
+        margin-top: 0;
+      }
+      .author-headshot {
+        float: right;
+        width: 120px;
+        height: 120px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        object-fit: cover;
+        -webkit-shape-outside: circle(50%);
+        shape-outside: circle(50%);
+        -webkit-shape-margin: 1rem;
+        shape-margin: 1rem;
+        margin-left: 1.25rem;
+        margin-bottom: 0.75rem;
+        margin-top: 0.25rem;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+      }
+      @media (min-width: 480px) {
+        .author-headshot {
+          width: 135px;
+          height: 135px;
+          -webkit-shape-margin: 1.15rem;
+          shape-margin: 1.15rem;
+          margin-left: 1.5rem;
+        }
+      }
+      @media (min-width: 640px) {
+        .author-headshot {
+          width: 155px;
+          height: 155px;
+          -webkit-shape-margin: 1.25rem;
+          shape-margin: 1.25rem;
+          margin-left: 1.75rem;
+          margin-bottom: 1rem;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        .author-headshot {
+          box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+      }
+      :is(.dark) .author-headshot,
+      [data-theme='dark'] .author-headshot {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+    <div class="author-intro flow-root">
+      {{- with resources.Get "headshot.png" }}
+        {{- $img := .Fill "320x320 Center" }}
+        <img
+          src="{{ $img.RelPermalink }}"
+          alt="{{ site.Params.author.name }}"
+          width="{{ $img.Width }}"
+          height="{{ $img.Height }}"
+          class="not-prose author-headshot"
+        />
+      {{- end }}
+      {{- with .Content }}
+        {{ . }}
+      {{ end -}}
+    </div>
   </article>
 
   {{- with site.GetPage "/news" }}
