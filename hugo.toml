@@ -15,6 +15,10 @@ enableRobotsTXT = true
 
 [menus]
   [[menus.main]]
+    name = 'News'
+    url = '/#news'
+    weight = 10
+  [[menus.main]]
     name = 'Notes'
     pageRef = '/notes'
     weight = 20
@@ -22,10 +26,6 @@ enableRobotsTXT = true
     name = 'Posts'
     pageRef = '/posts'
     weight = 30
-  [[menus.main]]
-    name = 'Graph'
-    pageRef = '/graph'
-    weight = 40
 
 [markup]
   [markup.highlight]

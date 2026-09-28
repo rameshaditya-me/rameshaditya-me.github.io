@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "vis-network": "^9.1.9"
-  },
   "scripts": {
     "dev": "hugo server --buildDrafts --buildFuture",
     "build": "hugo --gc --minify"

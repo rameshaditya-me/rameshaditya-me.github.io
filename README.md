@@ -6,17 +6,15 @@ Live at [rameshaditya-me.github.io](https://rameshaditya-me.github.io/).
 
 ## Local development
 
-**Prerequisites:** [Hugo Extended](https://gohugo.io/installation/), [Go](https://go.dev/dl/) (for Hugo modules), and [Node.js](https://nodejs.org/) (for the content graph).
+**Prerequisites:** [Hugo Extended](https://gohugo.io/installation/) and [Go](https://go.dev/dl/) (for Hugo modules). [Node.js](https://nodejs.org/) is optional if you prefer `npm run` scripts.
 
 ```bash
-# Install JS dependencies (required for the graph view)
-npm install
-
 # Download theme module
 hugo mod get
 
 # Start dev server
-npm run dev
+hugo server --buildDrafts --buildFuture
+# or: npm run dev
 ```
 
 Open [http://localhost:1313](http://localhost:1313).
@@ -25,9 +23,9 @@ Open [http://localhost:1313](http://localhost:1313).
 
 | Section | Path | Purpose |
 |---------|------|---------|
+| **News** | `content/news.md` | Homepage news / updates |
 | **Notes** | `content/notes/` | Short tips and discoveries |
 | **Posts** | `content/posts/` | Longer-form writing |
-| **Graph** | `content/graph.md` | Visual content network |
 
 ## Deploy
 
